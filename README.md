@@ -257,30 +257,6 @@ Available commands during a session:
 
 ---
 
-## Deployment
-
-### Frontend → Vercel
-
-1. Push the repo to GitHub
-2. Go to [vercel.com](https://vercel.com) → **New Project** → import the repo
-3. Set the following in Vercel project settings:
-   - **Root Directory:** `frontend`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-4. Add environment variable:
-   - `VITE_API_BASE_URL` → your Railway backend URL (see below)
-5. Deploy
-
-### Backend → Railway
-
-1. Go to [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub**
-2. Select the repo
-3. Add environment variable:
-   - `ANTHROPIC_API_KEY` → your key *(users provide their own key via the UI — this is only needed if you want a fallback)*
-4. Railway auto-detects the `Procfile` and deploys Flask
-
-Once Railway gives you a URL (e.g. `https://drift-lock.up.railway.app`), paste it into the `VITE_API_BASE_URL` env var on Vercel and redeploy.
-
 ---
 
 ## How the Fact-Grounding Check Works
