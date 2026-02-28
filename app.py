@@ -1,10 +1,3 @@
-"""
-TVASession Web App
-------------------
-Run locally:   python app.py
-Deploy:        Railway / Render (see Procfile)
-"""
-
 from __future__ import annotations
 
 import json
@@ -18,17 +11,13 @@ from flask import Flask, Response, jsonify, request, send_from_directory
 
 sys.path.insert(0, ".")
 from tva_session import TVASession
-
-# Serve the React build from frontend/dist in production.
-# In development, Vite dev server handles the frontend (npm run dev in frontend/).
 DIST = os.path.join(os.path.dirname(__file__), "frontend", "dist")
 app = Flask(__name__, static_folder=DIST, static_url_path="")
 
-# In-memory session store  { session_id -> TVASession }
 _sessions: dict[str, TVASession] = {}
 
 
-# ── Routes ────────────────────────────────────────────────────────────────────
+# Routes
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
@@ -122,9 +111,6 @@ def chat():
             "Connection":       "keep-alive",
         },
     )
-
-
-# ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
