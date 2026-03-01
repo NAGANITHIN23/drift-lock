@@ -6,7 +6,9 @@
 
 ## The Problem
 
-Large language models hallucinate. Even in a focused multi-turn conversation, a model will gradually introduce unverified claims, misremember earlier facts, and drift away from the original goal. Standard chat wrappers do nothing to detect or correct this.
+You start a conversation with a clear goal. Ten messages later, the AI is confidently telling you things that were never true, ignoring constraints you explicitly set, and solving a problem you never asked about. You didn't lose track. The model did.
+This is hallucination drift, and it's a fundamental problem with how LLMs handle multi-turn conversations. A model will gradually introduce unverified claims, misremember earlier facts, and drift away from the original goal. Standard chat wrappers do nothing to detect or correct this.
+DriftGuard does.
 
 ## How DriftGuard Solves It
 
