@@ -1,6 +1,6 @@
-# drift-lock
+# DriftGuard
 
-**drift-lock** is an open-source Python library and web app that wraps the Anthropic API to actively prevent LLM hallucination. It intercepts every model response, audits it for unsupported facts, corrects drift automatically, and keeps a structured session state that anchors the model to what has actually been established in the conversation.
+**DriftGuard** is an open-source Python library and web app that wraps the Anthropic API to actively prevent LLM hallucination. It intercepts every model response, audits it for unsupported facts, corrects drift automatically, and keeps a structured session state that anchors the model to what has actually been established in the conversation.
 
 ---
 
@@ -8,7 +8,7 @@
 
 Large language models hallucinate. Even in a focused multi-turn conversation, a model will gradually introduce unverified claims, misremember earlier facts, and drift away from the original goal. Standard chat wrappers do nothing to detect or correct this.
 
-## How drift-lock Solves It
+## How DriftGuard Solves It
 
 Every response passes through four mechanisms before it reaches the user:
 
@@ -81,8 +81,8 @@ When raw conversation history exceeds a character threshold, it is summarised in
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/drift-lock.git
-cd drift-lock
+git clone https://github.com/YOUR_USERNAME/DriftGuard.git
+cd DriftGuard
 ```
 
 ### 2. Set up the Python backend
@@ -137,7 +137,7 @@ python app.py   # serves both the React build and the API on port 5000
 ## Project Structure
 
 ```
-drift-lock/
+DriftGuard/
 ├── tva_session.py        # Core TVASession class — use this standalone
 ├── app.py                # Flask web server (SSE streaming)
 ├── requirements.txt      # Python dependencies
@@ -237,7 +237,7 @@ session.reset(keep_goal=True)
 
 ## CLI
 
-You can also run drift-lock as a terminal chat:
+You can also run DriftGuard as a terminal chat:
 
 ```bash
 python tva_session.py
