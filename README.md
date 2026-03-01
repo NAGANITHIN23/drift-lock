@@ -1,4 +1,4 @@
-# DriftGuard
+# DriftGuard - AI Hallucination Detection & Autonomous Correction Engine
 
 **DriftGuard** is an open-source Python library and web app that wraps the Anthropic API to actively prevent LLM hallucination. It intercepts every model response, audits it for unsupported facts, corrects drift automatically, and keeps a structured session state that anchors the model to what has actually been established in the conversation.
 
